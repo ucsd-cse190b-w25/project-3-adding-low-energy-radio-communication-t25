@@ -241,6 +241,8 @@ void privtag_detect_lost_mode(int16_t x, int16_t y, int16_t z) {
 
 		        was_lost = 0;
 		        nonDiscoverable = 1;
+
+		        lost_time = 0;
 		    }
 
 		    last_movement_time = current_time;
@@ -250,7 +252,7 @@ void privtag_detect_lost_mode(int16_t x, int16_t y, int16_t z) {
 
 		} else {
 			current_time = HAL_GetTick();
-			printf("was lost: %d; nondiscoverable: %d; current time: %d; last_movement_time: %d; lost mode time: %d \n", was_lost, nonDiscoverable, current_time, last_movement_time, LOST_MODE_TIME);
+			printf("was lost: %d; nondiscoverable: %d; current time: %d; last_movement_time: %d; lost mode time: %d ; lost time: %d \n", was_lost, nonDiscoverable, current_time, last_movement_time, LOST_MODE_TIME, lost_time);
 		    if (!was_lost && (current_time - last_movement_time >= LOST_MODE_TIME)) {
 		        printf("Device Lost! Entering lost mode...\n");
 		        stop_transmission = 0;
