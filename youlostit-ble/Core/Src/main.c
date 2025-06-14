@@ -41,7 +41,7 @@
 
 #define WHO_AM_I 0x0F
 //#define LOST_MODE_TIME 2000 // 1 minute in milliseconds (assuming 1ms per loop)9400 60
-#define LOST_MODE_TIME 10000 // 60 seconds
+#define LOST_MODE_TIME 60000 // 60 seconds
 #define MOVEMENT_THRESHOLD 330000000  // Define a threshold to detect movement 330000000   294300000
 
 /*Consider Removing this later*/
